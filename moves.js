@@ -133,3 +133,14 @@ function off_hover ()
 function switch_side_to_move () {
     side_to_move = (side_to_move === "O") ? "X" : "O";
 }
+
+/**
+ * Try to place the side_to_move symbol on giver square. Ignored if a symbol is already present
+ * @param {number} square_number the number of the square, ranging between 1 and 9
+ */
+function move (square_number) {
+    if (board[square_number] === "blank") {
+        set_square(square_number, side_to_move);
+        switch_side_to_move();
+    }
+}
