@@ -1,6 +1,7 @@
 .table {
     display: grid;
     grid-template-columns: 100px 100px 100px;
+    gap: 2px;
     position: absolute;
     top: 35%;
     left: 35%;
