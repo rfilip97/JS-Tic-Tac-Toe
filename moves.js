@@ -6,7 +6,8 @@
 let side_to_move = "X";
 
 /* Current board state */
-let board = [ "blank", "blank", "blank",
+let board = [ "-1",
+              "blank", "blank", "blank",
               "blank", "blank", "blank",
               "blank", "blank", "blank" ];
 
