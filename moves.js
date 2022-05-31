@@ -61,7 +61,7 @@ function reset_board () {
 
     // Clear all squares
     for (let i = 1; i <= 9; i++) {
-        set_square(i, get_symbol_id("blank"));
+        set_square(i, "blank");
     }
 }
 
