@@ -53,3 +53,21 @@
 .border_right {
     border-right: 2px solid black;
 }
+
+.reset_btn {
+    position: absolute;
+    bottom: 0%;
+    height: 100px;
+    width: 400px;
+    left: 32%;
+    bottom: 5%;
+    background-color: rgb(185, 17, 17);
+    color: white;
+    font-size: 40px;
+    border-radius: 40px;
+}
+
+.reset_btn:hover {
+    background-color: red;
+    cursor: pointer;
+}
