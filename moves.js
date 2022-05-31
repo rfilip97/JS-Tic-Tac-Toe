@@ -63,6 +63,9 @@ function reset_board () {
     for (let i = 1; i <= 9; i++) {
         set_square(i, "blank");
     }
+
+    // Reset side-to-move
+    side_to_move = "X";
 }
 
 /**
