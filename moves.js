@@ -113,8 +113,10 @@ function lower_opacity (square_number) {
  */
 function on_hover (square_number)
 {
-    draw_square(square_number, side_to_move);
-    lower_opacity(square_number);
+    if (board[square_number] === "blank") {
+        draw_square(square_number, side_to_move);
+        lower_opacity(square_number);
+    }
 }
 
 /**
