@@ -126,3 +126,10 @@ function off_hover ()
 {
     render();
 }
+
+/**
+ * Switch the symbol stored inside the internal side_to_move variable
+ */
+function switch_side_to_move () {
+    side_to_move = (side_to_move === "O") ? "X" : "O";
+}
