@@ -132,6 +132,7 @@ function off_hover ()
  */
 function switch_side_to_move () {
     side_to_move = (side_to_move === "O") ? "X" : "O";
+    document.getElementById('status_img').src = get_symbol_id(side_to_move);
 }
 
 /**
