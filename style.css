@@ -1,0 +1,14 @@
+.table {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+
+.square {
+    border: 2px solid black;
+    display: inline-block;
+    padding: 20px;
+}
