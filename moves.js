@@ -33,3 +33,28 @@ function get_symbol_id (symbol) {
         default: return "img/blank.png";
     }
 }
+
+/**
+ * Resets the entire board.
+ * After this function is called, another game can be started
+ */
+function reset_board () {
+    // Reset status image
+    document.getElementById('status_img').src = "img/x.png";
+
+    // Clear all squares
+    for (let i = 1; i <= 9; i++) {
+        set_square(i, get_symbol_id("blank"));
+    }
+}
+
+/**
+ *
+ * @param {number} square the id nr of the square, ranging between 1 and 9
+ * @param {string} symbol the symbol to be set on the square. Can be 'X', 'O', or 'blank'
+ */
+function set_square (square, symbol) {
+    let square_id = get_square_id(square);
+    let symbol_id = get_symbol_id(symbol);
+    document.getElementById(square_id).src = symbol_id;
+}
