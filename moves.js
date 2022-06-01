@@ -2,6 +2,9 @@
 /// GLOBALS
 ///**************************************************************************************
 
+/* Flag to mark if we can still place symbols on the board */
+let running = true;
+
 /* Player currently moving. Can be "X" or "O" */
 let side_to_move = "X";
 
@@ -11,6 +14,14 @@ let board = [ "-1",
               "blank", "blank", "blank",
               "blank", "blank", "blank" ];
 
+let winning_positions = [   [ 1, 2, 3 ],
+                            [ 4, 5, 6 ],
+                            [ 7, 8, 9 ],
+                            [ 1, 4, 7 ],
+                            [ 2, 5, 8 ],
+                            [ 3, 6, 9 ],
+                            [ 1, 5, 9 ],
+                            [ 3, 5, 7 ] ];
 ///**************************************************************************************
 /// FUNCTIONS
 ///**************************************************************************************
@@ -66,6 +77,9 @@ function reset_board () {
 
     // Reset side-to-move
     side_to_move = "X";
+
+    // Make the game playable again
+    running = true;
 }
 
 /**
@@ -139,12 +153,41 @@ function switch_side_to_move () {
 }
 
 /**
+ * Check if current board is a winning board for the given symbol
+ * @param {string} symbol The symbol for which winnin condition will be checked. Can be 'X' or 'O'
+ */
+function is_winning (symbol) {
+    for (let i = 0; i < winning_positions.length; i++) {
+        let is_winning = true;
+        for (let j = 0; j < winning_positions[i].length; j++) {
+            if (board[winning_positions[i][j]] != symbol) {
+                is_winning = false;
+                break;
+            }
+        }
+
+        if (is_winning) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * Try to place the side_to_move symbol on giver square. Ignored if a symbol is already present
  * @param {number} square_number the number of the square, ranging between 1 and 9
  */
 function move (square_number) {
+    if (!running) {
+        return;
+    }
+
     if (board[square_number] === "blank") {
         set_square(square_number, side_to_move);
+        if (is_winning(side_to_move)) {
+            running = false;
+            return;
+        }
         switch_side_to_move();
     }
 }
