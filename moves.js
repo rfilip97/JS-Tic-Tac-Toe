@@ -125,6 +125,18 @@ function lower_opacity (square_number) {
 }
 
 /**
+ * Lower the opacity of the entire board, excepting the specified squares
+ * @param {array[number]} excepted_squares Squares which will be ignored
+ */
+function lower_opacity_except (excepted_squares) {
+    for (let i = 1; i <=9; i++) {
+        if (!excepted_squares.includes(i)) {
+            lower_opacity(i);
+        }
+    }
+}
+
+/**
  * Preview the side_to_move image on selected square
  * @param {number} square_number the number of the square, ranging between 1 and 9
  */
@@ -145,7 +157,9 @@ function on_hover (square_number)
  */
 function off_hover ()
 {
-    render();
+    if (running) {
+        render();
+    }
 }
 
 /**
@@ -171,6 +185,7 @@ function is_winning (symbol) {
         }
 
         if (is_winning) {
+            lower_opacity_except(winning_positions[i]);
             return true;
         }
     }
