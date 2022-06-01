@@ -130,6 +130,10 @@ function lower_opacity (square_number) {
  */
 function on_hover (square_number)
 {
+    if (!running) {
+        return;
+    }
+
     if (board[square_number] === "blank") {
         draw_square(square_number, side_to_move);
         lower_opacity(square_number);
