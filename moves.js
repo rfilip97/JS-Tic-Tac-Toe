@@ -90,9 +90,10 @@ function reset_board () {
 function draw_square (square, symbol) {
     let square_id = get_square_id(square);
     let symbol_id = get_symbol_id(symbol);
-    document.getElementById(square_id).src = symbol_id;
-    document.getElementById(square_id).style.opacity = "1.0";
-    document.getElementById(square_id).style.filter  = 'alpha(opacity=100)';
+    const sq = document.getElementById(square_id);
+    sq.src = symbol_id;
+    sq.classList.remove("preview_square");
+    sq.classList.add("placed_square");
 }
 
 /**
@@ -120,8 +121,9 @@ function render () {
  */
 function lower_opacity (square_number) {
     let square_id = get_square_id(square_number);
-    document.getElementById(square_id).style.opacity = "0.4";
-    document.getElementById(square_id).style.filter  = 'alpha(opacity=40)';
+    const sq = document.getElementById(square_id);
+    sq.classList.remove("placed_square");
+    sq.classList.add("preview_square");
 }
 
 /**

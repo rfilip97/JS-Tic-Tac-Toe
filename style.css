@@ -77,3 +77,13 @@
     width: 100%;
     height: 100%;
 }
+
+.preview_square {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.placed_square {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
