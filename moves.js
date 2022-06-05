@@ -14,7 +14,7 @@ let board = [ "-1",
               "blank", "blank", "blank",
               "blank", "blank", "blank" ];
 
-let winning_positions = [   [ 1, 2, 3 ],
+const winning_positions = [ [ 1, 2, 3 ],
                             [ 4, 5, 6 ],
                             [ 7, 8, 9 ],
                             [ 1, 4, 7 ],
@@ -88,8 +88,8 @@ function reset_board () {
  * @param {string} symbol the symbol to be set on the square. Can be 'X', 'O', or 'blank'
  */
 function draw_square (square, symbol) {
-    let square_id = get_square_id(square);
-    let symbol_id = get_symbol_id(symbol);
+    const square_id = get_square_id(square);
+    const symbol_id = get_symbol_id(symbol);
     const sq = document.getElementById(square_id);
     sq.src = symbol_id;
     sq.classList.remove("preview_square");
@@ -120,7 +120,7 @@ function render () {
  * @param {number} square_number the number of the square, ranging between 1 and 9
  */
 function lower_opacity (square_number) {
-    let square_id = get_square_id(square_number);
+    const square_id = get_square_id(square_number);
     const sq = document.getElementById(square_id);
     sq.classList.remove("placed_square");
     sq.classList.add("preview_square");
