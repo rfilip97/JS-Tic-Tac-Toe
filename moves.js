@@ -259,14 +259,42 @@ function init_square(square_number) {
 }
 
 /**
+ * Add the table borders
+ */
+function add_borders() {
+  // Constants
+  const square = "square";
+  const border_right = "border_right";
+  const border_bottom = "border_bottom";
+
+  // Helper functions to access the square divs
+  const get_div_id = (id) => "square" + id;
+  const get_div_element = (id) => document.getElementById(get_div_id(id));
+
+  // Place the borders
+  get_div_element(1).classList.add(square, border_right, border_bottom);
+  get_div_element(2).classList.add(square, border_right, border_bottom);
+  get_div_element(3).classList.add(square, border_bottom);
+  get_div_element(4).classList.add(square, border_right, border_bottom);
+  get_div_element(5).classList.add(square, border_right, border_bottom);
+  get_div_element(6).classList.add(square, border_bottom);
+  get_div_element(7).classList.add(square, border_right);
+  get_div_element(8).classList.add(square, border_right);
+  get_div_element(9).classList.add(square);
+}
+
+/**
  * Initialize the entire board
  */
 function init() {
   // Init status image
   const status_sq = document.getElementById("status_img");
   status_sq.classList.add("status_img");
-  status_sq.src="img/x.png";
-  status_sq.alt="status-image";
+  status_sq.src = "img/x.png";
+  status_sq.alt = "status-image";
+
+  // Add the board borders
+  add_borders();
 
   // Init board squares
   for (let i = 1; i <= 9; i++) {
