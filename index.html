@@ -7,7 +7,7 @@
     <title>JS-Tic-Tac-Toe</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body>
+  <body onload="init()">
     <script src="moves.js"></script>
     <div class="status_container">
       <div class="status_text">Next move:</div>
@@ -22,103 +22,31 @@
     </div>
     <div class="table">
       <div class="square border_right border_bottom">
-        <img
-          id="pos1"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(1);"
-          onclick="move(1);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos1" />
       </div>
       <div class="square border_bottom border_right">
-        <img
-          id="pos2"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(2);"
-          onclick="move(2);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos2" />
       </div>
       <div class="square border_bottom">
-        <img
-          id="pos3"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(3);"
-          onclick="move(3);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos3" />
       </div>
       <div class="square border_bottom border_right">
-        <img
-          id="pos4"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(4);"
-          onclick="move(4);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos4" />
       </div>
       <div class="square border_bottom border_right">
-        <img
-          id="pos5"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(5);"
-          onclick="move(5);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos5" />
       </div>
       <div class="square border_bottom">
-        <img
-          id="pos6"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(6);"
-          onclick="move(6);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos6" />
       </div>
       <div class="square border_right">
-        <img
-          id="pos7"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(7);"
-          onclick="move(7);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos7" />
       </div>
       <div class="square border_right">
-        <img
-          id="pos8"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(8);"
-          onclick="move(8);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos8" />
       </div>
       <div class="square">
-        <img
-          id="pos9"
-          class="pos_img"
-          src="img/blank.png"
-          alt="status-image"
-          onmouseover="on_hover(9);"
-          onclick="move(9);"
-          onmouseout="off_hover();"
-        />
+        <img id="pos9" />
       </div>
     </div>
     <button class="reset_btn" onclick="reset_board()">Reset</button>

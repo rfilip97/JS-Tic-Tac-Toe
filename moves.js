@@ -242,3 +242,27 @@ function move(square_number) {
     switch_side_to_move();
   }
 }
+
+/**
+ * Initialize the board square
+ * @param {number} square_number the number of the square, ranging between 1 and 9
+ */
+function init_square(square_number) {
+  const square_id = get_square_id(square_number);
+  const sq = document.getElementById(square_id);
+  sq.classList.add("pos_img");
+  sq.src = "img/blank.png";
+  sq.alt = "status-image";
+  sq.setAttribute("onmouseover", `on_hover(${square_number});`);
+  sq.setAttribute("onclick", `move(${square_number});`);
+  sq.setAttribute("onmouseout", "off_hover();");
+}
+
+/**
+ * Initialize the entire board
+ */
+function init() {
+  for (let i = 1; i <= 9; i++) {
+    init_square(i);
+  }
+}
