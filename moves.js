@@ -262,6 +262,13 @@ function init_square(square_number) {
  * Initialize the entire board
  */
 function init() {
+  // Init status image
+  const status_sq = document.getElementById("status_img");
+  status_sq.classList.add("status_img");
+  status_sq.src="img/x.png";
+  status_sq.alt="status-image";
+
+  // Init board squares
   for (let i = 1; i <= 9; i++) {
     init_square(i);
   }
