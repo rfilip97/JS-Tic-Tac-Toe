@@ -1,7 +1,6 @@
 ///**************************************************************************************
 /// GLOBALS
 ///**************************************************************************************
-
 /* Flag to mark if we can still place symbols on the board */
 let running = true;
 
@@ -32,10 +31,10 @@ const winning_positions = [
   [1, 5, 9],
   [3, 5, 7],
 ];
+
 ///**************************************************************************************
 /// FUNCTIONS
 ///**************************************************************************************
-
 /**
  * Get the id string representing the given square
  * @param {number} square_number the number of the square, ranging between 1 and 9
